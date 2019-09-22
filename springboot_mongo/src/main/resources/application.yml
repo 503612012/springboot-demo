@@ -1,0 +1,8 @@
+server:
+  port: 5217
+  servlet:
+    context-path: /oven
+spring:
+  data:
+    mongodb:
+      uri: mongodb://Oven:123456@172.16.232.168:27017/mcd_huimai

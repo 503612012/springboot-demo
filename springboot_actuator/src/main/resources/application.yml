@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: prod #指定读取哪个文件
+  boot:
+    admin:
+      client:
+        url: http://localhost:8088
+        instance:
+          prefer-ip: true
+
+info:
+  head: head
+  body: body
+  author: Oven
+  age: 18
+management:
+  endpoints:
+    web:
+      exposure:
+        #加载所有的端点，默认只加载了info、health
+        include: '*'
+      #不配置SBA 扫描不到
+      base-path: /
+  endpoint:
+    health:
+      show-details: always
+    #可以关闭指定的端点
+    shutdown:
+      enabled: false
