@@ -1,0 +1,21 @@
+# OVEN SPRINGBOOT DEOM
+- [x] 集成activemq
+- [x] 集成actuator
+- [x] 集成caffeine
+- [x] 集成dubbo
+- [x] 动态数据源
+- [x] 集成elasticsearch
+- [x] 发送邮件
+- [x] 集成复杂事件
+- [x] 各种事件
+- [x] 获取请求者IP
+- [x] 配置文加密
+- [x] 集成kafka
+- [x] 集成mongodb
+- [x] 集成netty
+- [x] 集成rabbitmq
+- [x] restTemplate
+- [x] 集成shiro
+- [x] 定时动态任务
+- [x] 集成webflux
+- [x] 集成websocket
