@@ -42,6 +42,7 @@
         <module>springboot_kafka_consumer_2</module>
         <module>springboot_esper</module>
         <module>springboot_task</module>
+        <module>springboot_guava</module>
     </modules>
 
     <build>
