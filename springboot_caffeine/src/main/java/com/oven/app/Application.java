@@ -9,8 +9,8 @@ import org.springframework.cache.annotation.EnableCaching;
  *
  * @author Oven
  */
-@SpringBootApplication(scanBasePackages = "com.oven")
 @EnableCaching
+@SpringBootApplication(scanBasePackages = "com.oven")
 public class Application {
 
     /**
