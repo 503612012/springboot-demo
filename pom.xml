@@ -43,6 +43,7 @@
         <module>springboot_esper</module>
         <module>springboot_task</module>
         <module>springboot_guava</module>
+        <module>springboot_cross</module>
     </modules>
 
     <build>
