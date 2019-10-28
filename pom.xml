@@ -39,11 +39,12 @@
         <module>springboot_kafka_producer</module>
         <module>springboot_kafka_consumer</module>
         <module>springboot_rabbitmq</module>
-        <module>springboot_kafka_consumer_2</module>
         <module>springboot_esper</module>
         <module>springboot_task</module>
         <module>springboot_guava</module>
         <module>springboot_cross</module>
+        <module>springboot_dubbo</module>
+        <module>springboot_netty</module>
     </modules>
 
     <build>
