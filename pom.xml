@@ -20,8 +20,6 @@
         <module>springboot_caffeine</module>
         <module>springboot_activemq</module>
         <module>springboot_actuator</module>
-        <module>springboot_dubbo_producer</module>
-        <module>springboot_dubbo_consumer</module>
         <module>springboot_email</module>
         <module>springboot_event</module>
         <module>springboot_getIp</module>
@@ -34,10 +32,6 @@
         <module>springboot_elasticsearch</module>
         <module>springboot_kafka</module>
         <module>springboot_mongo</module>
-        <module>springboot_netty_client</module>
-        <module>springboot_netty_server</module>
-        <module>springboot_kafka_producer</module>
-        <module>springboot_kafka_consumer</module>
         <module>springboot_rabbitmq</module>
         <module>springboot_esper</module>
         <module>springboot_task</module>

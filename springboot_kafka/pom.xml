@@ -13,8 +13,9 @@
     <artifactId>springboot_kafka</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>springboot_kafka_consumer</module>
         <module>springboot_kafka_producer</module>
+        <module>springboot_kafka_consumer_1</module>
+        <module>springboot_kafka_consumer_2</module>
     </modules>
 
     <properties>

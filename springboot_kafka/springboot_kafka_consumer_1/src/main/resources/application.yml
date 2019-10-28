@@ -1,9 +1,13 @@
 server:
-  port: 8081
+  port: 8082
 spring:
   kafka:
-    producer:
+    consumer:
+      enable-auto-commit: true
+      group-id: applog_1
+      auto-offset-reset: latest
       bootstrap-servers: 172.16.188.137:9092
+    producer:
       # producer接收消息ack的时机.默认为0.
       # 0: producer不会等待broker发送ack
       # 1: 当leader接收到消息之后发送ack
