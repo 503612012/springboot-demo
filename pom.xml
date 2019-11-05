@@ -39,6 +39,7 @@
         <module>springboot_cross</module>
         <module>springboot_dubbo</module>
         <module>springboot_netty</module>
+        <module>springboot_encry</module>
     </modules>
 
     <build>
