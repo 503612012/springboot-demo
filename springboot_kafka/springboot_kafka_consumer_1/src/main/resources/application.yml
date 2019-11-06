@@ -7,19 +7,3 @@ spring:
       group-id: applog_1
       auto-offset-reset: latest
       bootstrap-servers: 172.16.188.137:9092
-    producer:
-      # producer接收消息ack的时机.默认为0.
-      # 0: producer不会等待broker发送ack
-      # 1: 当leader接收到消息之后发送ack
-      # 2: 当所有的follower都同步消息成功后发送ack.
-      acks: 0
-      # 生产者缓存消息的缓冲区大小，单位是字节，默认是33554432，即32M
-      # 由于采用了异步发送消息的设计，Java版本producer启动时会首先创建一块内存缓冲区用于保存待发送的消息，然后由另一个专属线程负责从缓冲区中读取消息执行真正的发送。
-      # 这部分内存空间的大小即由该参数决定。若producer向缓冲区写消息的速度超过了专属I/O线程发送消息的速度，那么必然造成该缓冲区空间的不断增大。此时producer会停止
-      # 手头的工作等待I/O线程追上来，若一段时间之后I/O线程还是无法追上producer的进度，那么producer就会抛出异常并期望用户介入进行处理。
-      buffer-memory: 33554432
-      # 设置producer端是否压缩消息，默认是none。
-      compression-type: lz4
-      retries: 0
-      # 默认值是16384，即16KB。消息并不一定是填满这个值后才发送，有可能当batch还没有很多空闲空间时producer就发送该batch
-      batch-size: 16384

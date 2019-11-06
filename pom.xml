@@ -40,6 +40,7 @@
         <module>springboot_dubbo</module>
         <module>springboot_netty</module>
         <module>springboot_encry</module>
+        <module>springboot_jwt</module>
     </modules>
 
     <build>
