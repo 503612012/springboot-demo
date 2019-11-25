@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaConsumer {
 
-    @KafkaListener(topics = {"icep_adapter_event_4g_group2"})
+    @KafkaListener(topics = {"test_topic1004"})
     public void receive(String message) {
         System.out.println("app_log_1--消费消息:" + message);
     }

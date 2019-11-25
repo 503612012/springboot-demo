@@ -29,7 +29,7 @@ public class KafkaProducer {
     @Scheduled(cron = "00/1 * * * * ?")
     public void send() {
         no++;
-        ListenableFuture future = kafkaTemplate.send("icep_adapter_event_4g_group2", String.valueOf(no));
+        ListenableFuture future = kafkaTemplate.send("test_topic1004", String.valueOf(no));
         future.addCallback(o -> System.out.println("send-消息发送成功：" + no), throwable -> System.out.println("消息发送失败：" + no));
     }
 
