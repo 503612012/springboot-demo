@@ -26,7 +26,7 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
     }
 
     @Override
@@ -38,6 +38,9 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
         response.setHeader("Access-Control-Allow-Headers", ":x-requested-with,content-type");
         filterChain.doFilter(servletRequest, servletResponse);
+        if (request.getRequestURI().equals("/hello")) { // 放行的url
+            return;
+        }
         if (!request.getRequestURI().equals("/oauth/token")) {
             invoke(fi);
         }
