@@ -41,6 +41,7 @@
         <module>springboot_netty</module>
         <module>springboot_encry</module>
         <module>springboot_jwt</module>
+        <module>springboot_oauth2</module>
     </modules>
 
     <build>
