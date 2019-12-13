@@ -81,7 +81,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         endpoints.exceptionTranslator(webResponseExceptionTranslator);
         // 要使用refresh_token的话，需要额外配置userDetailsService
         endpoints.userDetailsService(userDetailsService);
-
     }
 
 }
