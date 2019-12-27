@@ -1,20 +1,13 @@
 package com.oven.vo;
 
-import javax.persistence.*;
-
 /**
  * 书籍实体类
  *
  * @author Oven
  */
-@Entity
-@Table(name = "t_book")
 public class Book {
 
-    @Id
-    @GeneratedValue
     private Integer id;
-    @Column(name = "book_name")
     private String bookName;
     private String author;
 

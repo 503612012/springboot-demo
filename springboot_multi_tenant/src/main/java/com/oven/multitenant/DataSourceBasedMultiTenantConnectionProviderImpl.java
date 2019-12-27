@@ -13,7 +13,7 @@ import java.util.Map;
 import static com.oven.multitenant.MultiTenantConstants.DEFAULT_TENANT_ID;
 
 /**
- * 动态数据源提供
+ * 提供动态数据源
  *
  * @author Oven
  */
@@ -42,7 +42,7 @@ public class DataSourceBasedMultiTenantConnectionProviderImpl extends AbstractDa
 
     @Override
     public DataSource selectDataSource(String tenantIdentifier) {
-        if (!init) {
+        if (!init) { // 初始化所有数据源
             init = true;
             TenantDataSource tenantDataSource = context.getBean(TenantDataSource.class);
             map.putAll(tenantDataSource.getAll());

@@ -15,7 +15,6 @@ public class DataSourceConfig implements Serializable {
     private String username;
     private String password;
     private String driverClassName;
-    private boolean initialize;
 
     public Long getId() {
         return id;
@@ -41,10 +40,6 @@ public class DataSourceConfig implements Serializable {
         return driverClassName;
     }
 
-    public boolean getInitialize() {
-        return initialize;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -67,10 +62,6 @@ public class DataSourceConfig implements Serializable {
 
     public void setDriverClassName(String driverClassName) {
         this.driverClassName = driverClassName;
-    }
-
-    public void setInitialize(boolean initialize) {
-        this.initialize = initialize;
     }
 
 }

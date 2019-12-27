@@ -9,6 +9,5 @@ public interface MultiTenantConstants {
 
     String TENANT_KEY = "tenant";
     String DEFAULT_TENANT_ID = "default";
-    String CURRENT_TENANT_IDENTIFIER = "CURRENT_TENANT_IDENTIFIER";
 
 }

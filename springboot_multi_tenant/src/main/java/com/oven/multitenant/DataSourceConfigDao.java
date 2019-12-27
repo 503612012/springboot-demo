@@ -1,12 +1,9 @@
 package com.oven.multitenant;
 
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -22,37 +19,29 @@ public class DataSourceConfigDao {
 
     public List<DataSourceConfig> findAll() {
         String sql = "select * from t_datasource_config";
-        return this.jdbcTemplate.query(sql, new RowMapper<DataSourceConfig>() {
-            @Override
-            public DataSourceConfig mapRow(ResultSet rs, int rowNum) throws SQLException {
-                DataSourceConfig dataSourceConfig = new DataSourceConfig();
-                dataSourceConfig.setInitialize(rs.getInt("initialize") == 1);
-                dataSourceConfig.setId(rs.getLong("id"));
-                dataSourceConfig.setName(rs.getString("_name"));
-                dataSourceConfig.setPassword(rs.getString("_password"));
-                dataSourceConfig.setUsername(rs.getString("username"));
-                dataSourceConfig.setUrl(rs.getString("url"));
-                dataSourceConfig.setDriverClassName(rs.getString("driverclassname"));
-                return dataSourceConfig;
-            }
+        return this.jdbcTemplate.query(sql, (rs, rowNum) -> {
+            DataSourceConfig dataSourceConfig = new DataSourceConfig();
+            dataSourceConfig.setId(rs.getLong("id"));
+            dataSourceConfig.setName(rs.getString("_name"));
+            dataSourceConfig.setPassword(rs.getString("_password"));
+            dataSourceConfig.setUsername(rs.getString("username"));
+            dataSourceConfig.setUrl(rs.getString("url"));
+            dataSourceConfig.setDriverClassName(rs.getString("driverclassname"));
+            return dataSourceConfig;
         });
     }
 
     public DataSourceConfig findByName(String name) {
         String sql = "select * from t_datasource_config where _name = ?";
-        List<DataSourceConfig> list = this.jdbcTemplate.query(sql, new RowMapper<DataSourceConfig>() {
-            @Override
-            public DataSourceConfig mapRow(ResultSet rs, int rowNum) throws SQLException {
-                DataSourceConfig dataSourceConfig = new DataSourceConfig();
-                dataSourceConfig.setId(rs.getLong("id"));
-                dataSourceConfig.setInitialize(rs.getInt("initialize") == 1);
-                dataSourceConfig.setPassword(rs.getString("_password"));
-                dataSourceConfig.setName(rs.getString("_name"));
-                dataSourceConfig.setUsername(rs.getString("username"));
-                dataSourceConfig.setUrl(rs.getString("url"));
-                dataSourceConfig.setDriverClassName(rs.getString("driverclassname"));
-                return dataSourceConfig;
-            }
+        List<DataSourceConfig> list = this.jdbcTemplate.query(sql, (rs, rowNum) -> {
+            DataSourceConfig dataSourceConfig = new DataSourceConfig();
+            dataSourceConfig.setId(rs.getLong("id"));
+            dataSourceConfig.setPassword(rs.getString("_password"));
+            dataSourceConfig.setName(rs.getString("_name"));
+            dataSourceConfig.setUsername(rs.getString("username"));
+            dataSourceConfig.setUrl(rs.getString("url"));
+            dataSourceConfig.setDriverClassName(rs.getString("driverclassname"));
+            return dataSourceConfig;
         }, name);
         return list.size() == 0 ? null : list.get(0);
     }
