@@ -19,14 +19,14 @@ public class BookDao extends BaseDao {
             Book book = new Book();
             book.setId(rs.getInt("id"));
             book.setBookName(rs.getString("book_name"));
-            book.setAuthor(rs.getString("author"));
+            book.setFromDb(rs.getString("from_db"));
             return book;
         });
     }
 
     public void save(Book book) {
-        String sql = "insert into t_book (id, book_name, author) values (null, ?, ?)";
-        super.getJdbcTemplate().update(sql, book.getBookName(), book.getAuthor());
+        String sql = "insert into t_book (id, book_name, from_db) values (null, ?, ?)";
+        super.getJdbcTemplate().update(sql, book.getBookName(), book.getFromDb());
     }
 
 }

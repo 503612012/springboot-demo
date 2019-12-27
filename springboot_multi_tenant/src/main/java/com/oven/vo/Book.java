@@ -9,7 +9,7 @@ public class Book {
 
     private Integer id;
     private String bookName;
-    private String author;
+    private String fromDb;
 
     public Integer getId() {
         return id;
@@ -27,12 +27,12 @@ public class Book {
         this.bookName = bookName;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getFromDb() {
+        return fromDb;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setFromDb(String fromDb) {
+        this.fromDb = fromDb;
     }
 
 }

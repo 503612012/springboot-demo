@@ -1,10 +1,10 @@
 package com.oven.multitenant;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
@@ -20,8 +20,7 @@ public class DefaultDataSourceConfig {
     @Primary
     @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
-        // 这里可以改为数据库连接池 TODO
-        return new DriverManagerDataSource();
+        return new DruidDataSource();
     }
 
 }
