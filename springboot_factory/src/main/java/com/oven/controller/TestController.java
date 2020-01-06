@@ -16,6 +16,7 @@ public class TestController {
     @RequestMapping("/test")
     public Object test(String serviceId) {
         IService service = serviceContext.getService(serviceId);
+        // 需要判空 TODO
         return service.doSomthing(serviceId);
     }
 
