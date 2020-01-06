@@ -43,6 +43,8 @@
         <module>springboot_jwt</module>
         <module>springboot_oauth2</module>
         <module>springboot_multi_tenant</module>
+        <module>springboot_factory</module>
+        <module>springboot_extend</module>
     </modules>
 
     <build>
