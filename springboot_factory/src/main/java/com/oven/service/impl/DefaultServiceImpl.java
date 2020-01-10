@@ -4,7 +4,7 @@ import com.oven.service.IService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DefaultService implements IService {
+public class DefaultServiceImpl implements IService {
     @Override
     public String serviceId() {
         return "00";

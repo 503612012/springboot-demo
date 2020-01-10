@@ -29,7 +29,7 @@ public class EplController {
         EPStatement statement = epAdministrator.createEPL(epl);
         statement.addListener(new LacciListener1());
         statement.start();
-        EsperConfig.statementWrap.put("1", statement);
+        EsperConfig.STATEMENT_WRAP.put("1", statement);
         System.out.println(" 111 启动成功！");
         return " 111 启动成功！";
     }
@@ -41,24 +41,24 @@ public class EplController {
         EPStatement statement = epAdministrator.createEPL(epl);
         statement.addListener(new LacciListener2());
         statement.start();
-        EsperConfig.statementWrap.put("2", statement);
+        EsperConfig.STATEMENT_WRAP.put("2", statement);
         System.out.println(" 222 启动成功！");
         return " 222 启动成功！";
     }
 
     @RequestMapping("/stop1")
     public String stop1() {
-        EPStatement statement = EsperConfig.statementWrap.get("1");
+        EPStatement statement = EsperConfig.STATEMENT_WRAP.get("1");
         statement.stop();
-        EsperConfig.statementWrap.remove("1");
+        EsperConfig.STATEMENT_WRAP.remove("1");
         return " 111 停止成功！";
     }
 
     @RequestMapping("/stop2")
     public String stop2() {
-        EPStatement statement = EsperConfig.statementWrap.get("2");
+        EPStatement statement = EsperConfig.STATEMENT_WRAP.get("2");
         statement.stop();
-        EsperConfig.statementWrap.remove("2");
+        EsperConfig.STATEMENT_WRAP.remove("2");
         return " 222 停止成功！";
     }
 

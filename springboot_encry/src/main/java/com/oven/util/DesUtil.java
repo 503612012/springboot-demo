@@ -53,8 +53,9 @@ public class DesUtil {
      * 根据键值进行解密
      */
     public static String decrypt(String data, String key) throws Exception {
-        if (data == null)
+        if (data == null) {
             return null;
+        }
         BASE64Decoder decoder = new BASE64Decoder();
         byte[] buf = decoder.decodeBuffer(data);
         byte[] bt = decrypt(buf, key.getBytes(ENCODE));

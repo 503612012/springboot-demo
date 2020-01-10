@@ -13,7 +13,7 @@ import java.util.Map;
 @Configuration
 public class EsperConfig {
 
-    public final static Map<String, EPStatement> statementWrap = new HashMap<>();
+    public final static Map<String, EPStatement> STATEMENT_WRAP = new HashMap<>();
 
     @Bean
     public EPServiceProvider epServiceProvider() {
