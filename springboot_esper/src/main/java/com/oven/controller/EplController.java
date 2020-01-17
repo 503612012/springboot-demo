@@ -24,8 +24,11 @@ public class EplController {
 
     @RequestMapping("/start1")
     public String start1() {
-        String epl = "select lacci, phone from eventLocation where lacci in ('2', '1', '3')";
+        if (null != EsperConfig.STATEMENT_WRAP.get("1")) {
+            return "esper1已经启动！";
+        }
 
+        String epl = "select lacci, phone from eventLocation where lacci in ('2', '1', '3')";
         EPStatement statement = epAdministrator.createEPL(epl);
         statement.addListener(new LacciListener1());
         statement.start();
@@ -36,8 +39,11 @@ public class EplController {
 
     @RequestMapping("/start2")
     public String start2() {
-        String epl = "select lacci, phone from eventLocation where lacci in ('4', '3', '5')";
+        if (null != EsperConfig.STATEMENT_WRAP.get("2")) {
+            return "esper2已经启动！";
+        }
 
+        String epl = "select lacci, phone from eventLocation where lacci in ('4', '3', '5')";
         EPStatement statement = epAdministrator.createEPL(epl);
         statement.addListener(new LacciListener2());
         statement.start();
@@ -49,6 +55,10 @@ public class EplController {
     @RequestMapping("/stop1")
     public String stop1() {
         EPStatement statement = EsperConfig.STATEMENT_WRAP.get("1");
+        if (null == statement) {
+            return "esper1 not exist!";
+        }
+
         statement.stop();
         EsperConfig.STATEMENT_WRAP.remove("1");
         return " 111 停止成功！";
@@ -57,6 +67,10 @@ public class EplController {
     @RequestMapping("/stop2")
     public String stop2() {
         EPStatement statement = EsperConfig.STATEMENT_WRAP.get("2");
+        if (null == statement) {
+            return "esper2 not exist!";
+        }
+
         statement.stop();
         EsperConfig.STATEMENT_WRAP.remove("2");
         return " 222 停止成功！";
