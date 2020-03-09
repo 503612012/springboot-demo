@@ -3,7 +3,8 @@ server:
 spring:
   kafka:
     consumer:
+      topicName: oven.test.topic
       enable-auto-commit: true
       group-id: applog_1
       auto-offset-reset: latest
-      bootstrap-servers: 172.16.188.137:9092
+      bootstrap-servers: 172.16.188.173:9092
