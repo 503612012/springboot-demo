@@ -45,6 +45,7 @@
         <module>springboot_multi_tenant</module>
         <module>springboot_factory</module>
         <module>springboot_extend</module>
+        <module>springboot_admin</module>
     </modules>
 
     <build>
