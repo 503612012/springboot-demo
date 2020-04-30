@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 /**
- * 动态定时任务
+ * 动态定时任务（可能时间由长变短的时候，不生效）
  *
  * @author Oven
  */
