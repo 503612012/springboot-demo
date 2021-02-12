@@ -15,12 +15,11 @@ public class GreetingController {
     @Autowired
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    @MessageMapping("/chat")
-//    @SendTo("/topic/greetings")
+    @MessageMapping("/scene")
     public void greeting(Message message) throws Exception {
         System.out.println("收到：" + message.toString() + "消息");
         for (int i = 0; i < 10; i++) {
-            simpMessagingTemplate.convertAndSend("/topic/chat/5217", "Hello, " + HtmlUtils.htmlEscape(message.getContent()) + "!");
+            simpMessagingTemplate.convertAndSend("/scene/5217", "Hello, " + HtmlUtils.htmlEscape(message.getContent()) + "!");
             TimeUnit.SECONDS.sleep(2);
         }
     }

@@ -46,6 +46,8 @@
         <module>springboot_factory</module>
         <module>springboot_extend</module>
         <module>springboot_admin</module>
+        <module>springboot_redisson</module>
+        <module>springboot_knife4j</module>
     </modules>
 
     <build>
