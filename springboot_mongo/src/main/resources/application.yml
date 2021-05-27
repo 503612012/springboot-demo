@@ -5,4 +5,4 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://Oven:123456@172.16.232.168:27017/mcd_huimai
+      uri: mongodb://xxx:xxx@xxx.xxx.xxx.xxx:27017/xxx_xxxxxx
