@@ -49,6 +49,7 @@
         <module>springboot_redisson</module>
         <module>springboot_knife4j</module>
         <module>springboot_access_log</module>
+        <module>springboot_apidoc</module>
     </modules>
 
     <build>
