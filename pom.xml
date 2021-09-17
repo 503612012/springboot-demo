@@ -51,6 +51,7 @@
         <module>springboot_access_log</module>
         <module>springboot_apidoc</module>
         <module>springboot_argumentResolver</module>
+        <module>springboot_async</module>
     </modules>
 
     <build>
