@@ -52,6 +52,7 @@
         <module>springboot_apidoc</module>
         <module>springboot_argumentResolver</module>
         <module>springboot_async</module>
+        <module>springboot_cache_caffeine</module>
     </modules>
 
     <build>
