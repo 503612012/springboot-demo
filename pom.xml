@@ -53,6 +53,7 @@
         <module>springboot_argumentResolver</module>
         <module>springboot_async</module>
         <module>springboot_cache_caffeine</module>
+        <module>springboot_cache_ehcache</module>
     </modules>
 
     <build>
