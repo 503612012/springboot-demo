@@ -54,6 +54,7 @@
         <module>springboot_async</module>
         <module>springboot_cache_caffeine</module>
         <module>springboot_cache_ehcache</module>
+        <module>springboot_cache_guava</module>
     </modules>
 
     <build>
