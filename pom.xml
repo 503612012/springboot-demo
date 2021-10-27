@@ -55,6 +55,7 @@
         <module>springboot_cache_caffeine</module>
         <module>springboot_cache_ehcache</module>
         <module>springboot_cache_guava</module>
+        <module>springboot_cache_redis</module>
     </modules>
 
     <build>
