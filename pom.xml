@@ -59,6 +59,7 @@
         <module>springboot_cache_spring</module>
         <module>springboot_dateformat</module>
         <module>springboot_devtools</module>
+        <module>springboot_docker</module>
     </modules>
 
     <build>
