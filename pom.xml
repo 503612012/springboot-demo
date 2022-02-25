@@ -63,6 +63,7 @@
         <module>springboot_druid_monitor</module>
         <module>springboot_dynamic_schedule</module>
         <module>springboot_easypoi</module>
+        <module>springboot_webservice</module>
     </modules>
 
     <build>
