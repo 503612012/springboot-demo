@@ -64,6 +64,7 @@
         <module>springboot_dynamic_schedule</module>
         <module>springboot_easypoi</module>
         <module>springboot_webservice</module>
+        <module>springboot_thymeleaf</module>
     </modules>
 
     <build>
