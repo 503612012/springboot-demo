@@ -65,6 +65,7 @@
         <module>springboot_easypoi</module>
         <module>springboot_webservice</module>
         <module>springboot_thymeleaf</module>
+        <module>springboot_swagger2</module>
     </modules>
 
     <build>
