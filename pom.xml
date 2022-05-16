@@ -68,6 +68,7 @@
         <module>springboot_swagger2</module>
         <module>springboot_session</module>
         <module>springboot_sentinel</module>
+        <module>springboot_schedule</module>
     </modules>
 
     <build>
