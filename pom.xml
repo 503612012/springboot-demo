@@ -69,6 +69,7 @@
         <module>springboot_session</module>
         <module>springboot_sentinel</module>
         <module>springboot_schedule</module>
+        <module>springboot_rocketmq</module>
     </modules>
 
     <build>
