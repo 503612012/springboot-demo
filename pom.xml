@@ -71,6 +71,7 @@
         <module>springboot_schedule</module>
         <module>springboot_rocketmq</module>
         <module>springboot_restdoc</module>
+        <module>springboot_redis</module>
     </modules>
 
     <build>
