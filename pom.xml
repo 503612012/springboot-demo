@@ -72,6 +72,7 @@
         <module>springboot_rocketmq</module>
         <module>springboot_restdoc</module>
         <module>springboot_redis</module>
+        <module>springboot_quartz_web</module>
     </modules>
 
     <build>
