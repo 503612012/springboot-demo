@@ -73,6 +73,7 @@
         <module>springboot_restdoc</module>
         <module>springboot_redis</module>
         <module>springboot_quartz_web</module>
+        <module>springboot_quartz</module>
     </modules>
 
     <build>
