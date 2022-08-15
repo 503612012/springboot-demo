@@ -75,6 +75,7 @@
         <module>springboot_quartz_web</module>
         <module>springboot_quartz</module>
         <module>springboot_property</module>
+        <module>springboot_prometheus</module>
     </modules>
 
     <build>
