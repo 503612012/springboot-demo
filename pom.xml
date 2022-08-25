@@ -76,6 +76,7 @@
         <module>springboot_quartz</module>
         <module>springboot_property</module>
         <module>springboot_prometheus</module>
+        <module>springboot_nginx_loadBalanced</module>
     </modules>
 
     <build>
