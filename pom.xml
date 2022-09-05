@@ -77,6 +77,7 @@
         <module>springboot_property</module>
         <module>springboot_prometheus</module>
         <module>springboot_nginx_loadBalanced</module>
+        <module>springboot_mybatis_xml</module>
     </modules>
 
     <build>
