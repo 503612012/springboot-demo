@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.oven</groupId>
-    <artifactId>springboot_demo</artifactId>
+    <artifactId>springboot-demo</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -17,67 +17,68 @@
     </parent>
 
     <modules>
-        <module>springboot_caffeine</module>
-        <module>springboot_activemq</module>
-        <module>springboot_actuator</module>
-        <module>springboot_email</module>
-        <module>springboot_event</module>
-        <module>springboot_getIp</module>
-        <module>springboot_jasypt</module>
-        <module>springboot_restTemplate</module>
-        <module>springboot_websocket</module>
-        <module>springboot_webflux</module>
-        <module>springboot_shiro</module>
-        <module>springboot_dynamic_datasource</module>
-        <module>springboot_elasticsearch</module>
-        <module>springboot_kafka</module>
-        <module>springboot_mongo</module>
-        <module>springboot_rabbitmq</module>
-        <module>springboot_esper</module>
-        <module>springboot_task</module>
-        <module>springboot_guava</module>
-        <module>springboot_cross</module>
-        <module>springboot_dubbo</module>
-        <module>springboot_netty</module>
-        <module>springboot_encry</module>
-        <module>springboot_jwt</module>
-        <module>springboot_oauth2</module>
-        <module>springboot_multi_tenant</module>
-        <module>springboot_factory</module>
-        <module>springboot_extend</module>
-        <module>springboot_admin</module>
-        <module>springboot_redisson</module>
-        <module>springboot_knife4j</module>
-        <module>springboot_access_log</module>
-        <module>springboot_apidoc</module>
-        <module>springboot_argumentResolver</module>
-        <module>springboot_async</module>
-        <module>springboot_cache_caffeine</module>
-        <module>springboot_cache_ehcache</module>
-        <module>springboot_cache_guava</module>
-        <module>springboot_cache_redis</module>
-        <module>springboot_cache_spring</module>
-        <module>springboot_dateformat</module>
-        <module>springboot_devtools</module>
-        <module>springboot_docker</module>
-        <module>springboot_druid_monitor</module>
-        <module>springboot_dynamic_schedule</module>
-        <module>springboot_easypoi</module>
-        <module>springboot_webservice</module>
-        <module>springboot_thymeleaf</module>
-        <module>springboot_swagger2</module>
-        <module>springboot_session</module>
-        <module>springboot_sentinel</module>
-        <module>springboot_schedule</module>
-        <module>springboot_rocketmq</module>
-        <module>springboot_restdoc</module>
-        <module>springboot_redis</module>
-        <module>springboot_quartz_web</module>
-        <module>springboot_quartz</module>
-        <module>springboot_property</module>
-        <module>springboot_prometheus</module>
-        <module>springboot_nginx_loadBalanced</module>
-        <module>springboot_mybatis_xml</module>
+        <module>springboot-caffeine</module>
+        <module>springboot-activemq</module>
+        <module>springboot-actuator</module>
+        <module>springboot-email</module>
+        <module>springboot-event</module>
+        <module>springboot-getIp</module>
+        <module>springboot-jasypt</module>
+        <module>springboot-restTemplate</module>
+        <module>springboot-websocket</module>
+        <module>springboot-webflux</module>
+        <module>springboot-shiro</module>
+        <module>springboot-dynamic-datasource</module>
+        <module>springboot-elasticsearch</module>
+        <module>springboot-kafka</module>
+        <module>springboot-mongo</module>
+        <module>springboot-rabbitmq</module>
+        <module>springboot-esper</module>
+        <module>springboot-commandRunner</module>
+        <module>springboot-task</module>
+        <module>springboot-guava</module>
+        <module>springboot-cross</module>
+        <module>springboot-dubbo</module>
+        <module>springboot-netty</module>
+        <module>springboot-encry</module>
+        <module>springboot-jwt</module>
+        <module>springboot-oauth2</module>
+        <module>springboot-multi-tenant</module>
+        <module>springboot-factory</module>
+        <module>springboot-extend</module>
+        <module>springboot-admin</module>
+        <module>springboot-redisson</module>
+        <module>springboot-knife4j</module>
+        <module>springboot-access-log</module>
+        <module>springboot-apidoc</module>
+        <module>springboot-argumentResolver</module>
+        <module>springboot-async</module>
+        <module>springboot-cache-caffeine</module>
+        <module>springboot-cache-ehcache</module>
+        <module>springboot-cache-guava</module>
+        <module>springboot-cache-redis</module>
+        <module>springboot-cache-spring</module>
+        <module>springboot-dateformat</module>
+        <module>springboot-devtools</module>
+        <module>springboot-docker</module>
+        <module>springboot-druid-monitor</module>
+        <module>springboot-dynamic-schedule</module>
+        <module>springboot-easypoi</module>
+        <module>springboot-webservice</module>
+        <module>springboot-thymeleaf</module>
+        <module>springboot-swagger2</module>
+        <module>springboot-session</module>
+        <module>springboot-sentinel</module>
+        <module>springboot-schedule</module>
+        <module>springboot-rocketmq</module>
+        <module>springboot-restdoc</module>
+        <module>springboot-redis</module>
+        <module>springboot-quartz-web</module>
+        <module>springboot-quartz</module>
+        <module>springboot-property</module>
+        <module>springboot-prometheus</module>
+        <module>springboot-nginx-loadBalanced</module>
+        <module>springboot-mybatis-xml</module>
     </modules>
 
     <build>
