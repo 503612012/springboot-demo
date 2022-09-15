@@ -79,6 +79,7 @@
         <module>springboot-prometheus</module>
         <module>springboot-nginx-loadBalanced</module>
         <module>springboot-mybatis-xml</module>
+        <module>springboot-mybatis-annotation</module>
     </modules>
 
     <build>
