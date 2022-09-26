@@ -80,6 +80,7 @@
         <module>springboot-nginx-loadBalanced</module>
         <module>springboot-mybatis-xml</module>
         <module>springboot-mybatis-annotation</module>
+        <module>springboot-multiDatasource-mybatis</module>
     </modules>
 
     <build>
