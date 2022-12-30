@@ -1,5 +1,12 @@
 /.idea/
+!/.idea/icon.svg
+!/.idea/icon.png
 /*/*.iml
 /*/*/*.iml
 /*/target
 /*/*/target
+
+/target/
+/.git/
+/.DS_Store
+/springboot-demo.iml
