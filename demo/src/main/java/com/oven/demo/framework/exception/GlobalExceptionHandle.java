@@ -5,7 +5,7 @@ import com.oven.basic.common.util.IPUtils;
 import com.oven.basic.common.util.ParametersUtils;
 import com.oven.basic.common.util.ResultInfo;
 import com.oven.demo.common.enumerate.ResultEnum;
-import com.oven.demo.framework.limit.LimitException;
+import com.oven.demo.framework.limitation.LimitException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
