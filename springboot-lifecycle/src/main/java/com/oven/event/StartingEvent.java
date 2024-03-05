@@ -11,5 +11,4 @@ public class StartingEvent implements ApplicationListener<ApplicationStartingEve
         System.out.println("=================1. StartingEvent=================");
     }
 
-
 }
