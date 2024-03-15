@@ -7,6 +7,7 @@ import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.afterturn.easypoi.view.PoiBaseView;
 import com.oven.vo.Member;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequestMapping("/easyPoi")
 public class EasyPoiController {
@@ -51,7 +53,7 @@ public class EasyPoiController {
             List<Member> list = ExcelImportUtil.importExcel(file.getInputStream(), Member.class, params);
             return "导入成功";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return "导入失败";
     }

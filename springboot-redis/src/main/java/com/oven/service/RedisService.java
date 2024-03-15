@@ -1,5 +1,6 @@
 package com.oven.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
@@ -9,6 +10,7 @@ import org.springframework.util.StringUtils;
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 @Service
 public class RedisService {
 
@@ -27,10 +29,10 @@ public class RedisService {
         }
         try {
             ValueOperations<String, Object> operations = redisTemplate.opsForValue();
-            //noinspection unchecked
+            // noinspection unchecked
             obj = (T) operations.get(key);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return obj;
     }
