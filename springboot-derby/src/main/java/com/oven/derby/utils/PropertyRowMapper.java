@@ -26,8 +26,6 @@ import java.util.Set;
 
 /**
  * JDBC关系映射工具类
- *
- * @author Oven
  */
 @Slf4j
 public class PropertyRowMapper<T> implements RowMapper<T> {

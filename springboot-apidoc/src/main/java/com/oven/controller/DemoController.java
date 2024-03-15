@@ -1,10 +1,12 @@
 package com.oven.controller;
 
 import com.oven.vo.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 public class DemoController {
 
@@ -29,7 +31,7 @@ public class DemoController {
      */
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public Object add(User user) {
-        System.out.println(user);
+        log.info("{}", user);
         if ((user.getId() & 1) > 0) {
             return "添加成功";
         } else {
@@ -50,19 +52,19 @@ public class DemoController {
      * @apiSuccessExample Success-Response:
      * HTTP/1.1 200 请求成功
      * {
-     *      "code": "200",
-     *      "data": [{
-     *                   "id": "1",
-     *                   "uname": "admin"
-     *                   "pwd": "123"
-     *                   "age": 18
-     *              }]
+     * "code": "200",
+     * "data": [{
+     * "id": "1",
+     * "uname": "admin"
+     * "pwd": "123"
+     * "age": 18
+     * }]
      * }
      * @apiErrorExample Error-Response:
      * HTTP/1.1 201 接口异常
      * {
-     *      "code": "201",
-     *      "data": "系统异常"
+     * "code": "201",
+     * "data": "系统异常"
      * }
      */
     @RequestMapping(value = "search", method = RequestMethod.GET)
