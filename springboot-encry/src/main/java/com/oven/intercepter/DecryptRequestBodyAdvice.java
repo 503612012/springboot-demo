@@ -1,6 +1,7 @@
 package com.oven.intercepter;
 
 import com.oven.util.DesUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -14,9 +15,8 @@ import java.util.Map;
 
 /**
  * 请求参数-解密操作
- *
- * @author Oven
  */
+@Slf4j
 @Component
 @ControllerAdvice(basePackages = "com.oven.controller")
 public class DecryptRequestBodyAdvice implements RequestBodyAdvice {
@@ -40,7 +40,7 @@ public class DecryptRequestBodyAdvice implements RequestBodyAdvice {
             String srcData = dataMap.get("data");
             dealData = DesUtil.decrypt(srcData);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return dealData;
     }

@@ -1,46 +1,72 @@
 # springboot炖fileUpload
+
 ### 1. 先睹为快
+
 ### 2. docker安装fileUpload
+
 #### 2.1 下载fastdfs镜像
+
 ```shell script
 docker pull delron/fastdfs
 ```
+
 #### 2.2 创建本地目录
+
 ```shell script
 mkdir /usr/local/fastdfs/tracker
 mkdir /usr/local/fastdfs/storage
 ```
+
 #### 2.3 启动tracker容器
+
 ```shell script
 docker run -d --network=host --name tracker -v /usr/local/fastdfs/tracker:/var/fdfs delron/fastdfs tracker
 ```
+
 #### 2.4 启动stroage容器
+
 ```shell script
 docker run -d --network=host --name storage -e TRACKER_SERVER=172.16.188.194:22122 -v /usr/local/fastdfs/storage:/var/fdfs -e GROUP_NAME=group1 delron/fastdfs storage
 ```
+
 #### 2.5 测试
+
 ##### 2.5.1 拷贝一张图片(test.jpg)到/usr/local/fastdfs/storage目录中
+
 ##### 2.5.2 进入到storage容器中
+
 ```shell script
 docker exec -it storage bash
 ```
+
 ##### 2.5.3 进入到fdfs目录
+
 ```shell script
 cd /var/fdfs
 ```
+
 ##### 2.5.4 执行命令
+
 ```shell script
 /usr/bin/fdfs_upload_file /etc/fdfs/client.conf test.jpg
 ```
+
 ##### 2.5.5 用上述命令的返回结果到浏览器访问
+
 ```http request
 http://172.16.188.194:8888/group1/M00/00/00/xxxxxxxxxxxxxxxxxxxx.jpg
 ```
+
 ### 3. 实现原理
+
 #### 3.1 新建项目
+
 #### 3.2 创建maven目录结构，以及pom.xml文件
+
 #### 3.3 pom.xml文件中加入依赖
+
 ```xml
+
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -48,8 +74,11 @@ http://172.16.188.194:8888/group1/M00/00/00/xxxxxxxxxxxxxxxxxxxx.jpg
     <relativePath/>
 </parent>
 ```
+
 #### 3.4 pom.xml文件中加入springboot-starter依赖
+
 ```xml
+
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -68,8 +97,11 @@ http://172.16.188.194:8888/group1/M00/00/00/xxxxxxxxxxxxxxxxxxxx.jpg
     </dependency>
 </dependencies>
 ```
+
 #### 3.5 pom.xml文件中加入maven-springboot打包插件
+
 ```xml
+
 <build>
     <plugins>
         <plugin>
@@ -79,7 +111,9 @@ http://172.16.188.194:8888/group1/M00/00/00/xxxxxxxxxxxxxxxxxxxx.jpg
     </plugins>
 </build>
 ```
+
 #### 3.6 开发启动类
+
 ```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -93,7 +127,9 @@ public class Application {
 
 }
 ```
+
 #### 3.7 开发fastdfs工具类
+
 ```java
 import com.github.tobato.fastdfs.domain.fdfs.MetaData;
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
@@ -172,10 +208,15 @@ public class FastdfsUtils {
 
 }
 ```
+
 #### 3.8 开发文件上传接口
+
 ```java
+package com.oven.controller;
+
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.oven.utils.FastdfsUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -184,6 +225,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @Controller
 public class DemoController {
 
@@ -196,7 +238,7 @@ public class DemoController {
     }
 
     @RequestMapping("/upload")
-    public String singleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
+    public String upload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "请选择一个文件！");
             return "redirect:/";
@@ -206,14 +248,16 @@ public class DemoController {
             redirectAttributes.addFlashAttribute("message", "上传【" + file.getOriginalFilename() + "】成功!");
             redirectAttributes.addFlashAttribute("path", "http://172.16.188.194:8888/" + path.getFullPath());
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return "redirect:/";
     }
 
 }
 ```
+
 #### 3.9 开发文件上传下载页面
+
 ```html
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -240,7 +284,9 @@ public class DemoController {
 </body>
 </html>
 ```
+
 #### 3.10 编写配置文件
+
 ```properties
 fdfs.connect-timeout=600
 fdfs.so-timeout=1500
@@ -249,5 +295,7 @@ fdfs.thumb-image.width=150
 fdfs.tracker-list=172.16.188.194:22122
 fdfs.pool.jmx-enabled=false
 ```
+
 #### 3.11 编译打包运行
+
 ### 4. 应用场景

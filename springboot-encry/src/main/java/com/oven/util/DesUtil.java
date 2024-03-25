@@ -11,8 +11,6 @@ import java.security.SecureRandom;
 
 /**
  * DES加密-解密算法
- *
- * @author Oven
  */
 public class DesUtil {
 

@@ -53,6 +53,9 @@ public class Application {
 ```
 #### 2.7 开发文件服务类
 ```java
+package com.oven.utils;
+
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
@@ -66,6 +69,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+@Slf4j
 @Service
 public class FileUtils {
 
@@ -79,7 +83,7 @@ public class FileUtils {
             }
             Files.copy(file.getInputStream(), path.resolve(Objects.requireNonNull(file.getOriginalFilename())));
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("上传文件异常：", e);
         }
     }
 
@@ -89,7 +93,7 @@ public class FileUtils {
                     .filter(path -> !path.equals(this.path))
                     .map(this.path::relativize);
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("获取文件列表异常：", e);
         }
         return null;
     }
@@ -104,12 +108,13 @@ public class FileUtils {
                 System.out.println("读取文件失败！");
             }
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            log.error("读取文件异常：", e);
         }
         return null;
     }
 
 }
+
 ```
 #### 2.8 开发文件上传下载接口
 ```java

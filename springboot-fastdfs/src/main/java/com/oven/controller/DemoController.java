@@ -2,6 +2,7 @@ package com.oven.controller;
 
 import com.github.tobato.fastdfs.domain.fdfs.StorePath;
 import com.oven.utils.FastdfsUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @Controller
 public class DemoController {
 
@@ -32,7 +34,7 @@ public class DemoController {
             redirectAttributes.addFlashAttribute("message", "上传【" + file.getOriginalFilename() + "】成功!");
             redirectAttributes.addFlashAttribute("path", "http://172.16.188.194:8888/" + path.getFullPath());
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return "redirect:/";
     }

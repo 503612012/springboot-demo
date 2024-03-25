@@ -2,6 +2,7 @@ package com.oven.intercepter;
 
 import com.alibaba.fastjson.JSON;
 import com.oven.util.DesUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -13,9 +14,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
  * 请求参数-加密操作
- *
- * @author Oven
  */
+@Slf4j
 @Component
 @ControllerAdvice(basePackages = "com.oven.controller")
 public class EncryResponseBodyAdvice implements ResponseBodyAdvice<Object> {
@@ -40,7 +40,7 @@ public class EncryResponseBodyAdvice implements ResponseBodyAdvice<Object> {
             // 加密
             result = DesUtil.encrypt(srcData);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return result;
     }
