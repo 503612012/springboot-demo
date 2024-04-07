@@ -10,8 +10,6 @@ import javax.annotation.Resource;
 
 /**
  * 用户控制器
- *
- * @author Oven
  */
 @Controller
 public class UserController {

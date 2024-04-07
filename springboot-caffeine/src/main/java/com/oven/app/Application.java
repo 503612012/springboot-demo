@@ -6,8 +6,6 @@ import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * 启动类
- *
- * @author Oven
  */
 @EnableCaching
 @SpringBootApplication(scanBasePackages = "com.oven")
