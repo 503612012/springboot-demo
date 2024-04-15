@@ -8,8 +8,6 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * restTemplate配置
- *
- * @author Oven
  */
 @Configuration
 public class RestTemplateConfig {

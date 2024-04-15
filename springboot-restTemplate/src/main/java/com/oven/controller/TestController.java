@@ -10,8 +10,6 @@ import java.net.URISyntaxException;
 
 /**
  * 测试类
- *
- * @author Oven
  */
 @RestController
 public class TestController {

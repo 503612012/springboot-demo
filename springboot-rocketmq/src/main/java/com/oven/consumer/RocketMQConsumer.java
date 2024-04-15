@@ -1,5 +1,6 @@
 package com.oven.consumer;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @Configuration
 public class RocketMQConsumer {
 
@@ -29,7 +31,7 @@ public class RocketMQConsumer {
         try {
             consumer.subscribe("springboot-rocketmq", "test");
         } catch (MQClientException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return consumer;
     }

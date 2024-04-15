@@ -1,9 +1,11 @@
 package com.oven.task;
 
+import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class ScheduleTask {
 
@@ -15,7 +17,7 @@ public class ScheduleTask {
      */
     @Scheduled(fixedRate = 2000)
     public void task() {
-        System.out.println("do somthing..." + new DateTime().toString("HH:mm:ss"));
+        log.info("do something...{}", new DateTime().toString("HH:mm:ss"));
     }
 
 }

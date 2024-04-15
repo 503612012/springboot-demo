@@ -12,8 +12,6 @@ import org.springframework.util.StringUtils;
 
 /**
  * 动态定时任务（可能时间由长变短的时候，不生效）
- *
- * @author Oven
  */
 @Component
 public class DynamicScheduleTask implements SchedulingConfigurer {
