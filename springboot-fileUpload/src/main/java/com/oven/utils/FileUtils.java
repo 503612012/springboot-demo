@@ -23,7 +23,7 @@ public class FileUtils {
     public void upload(MultipartFile file) {
         try {
             if (file.isEmpty()) {
-                System.out.println("文件为空！");
+                log.info("文件为空！");
                 return;
             }
             Files.copy(file.getInputStream(), path.resolve(Objects.requireNonNull(file.getOriginalFilename())));
@@ -50,7 +50,7 @@ public class FileUtils {
             if (resource.exists() || resource.isReadable()) {
                 return resource;
             } else {
-                System.out.println("读取文件失败！");
+                log.info("读取文件失败！");
             }
         } catch (MalformedURLException e) {
             log.error("读取文件异常：", e);

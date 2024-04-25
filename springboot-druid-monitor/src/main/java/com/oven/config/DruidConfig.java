@@ -3,6 +3,7 @@ package com.oven.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -14,6 +15,7 @@ import javax.sql.DataSource;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Configuration
 public class DruidConfig {
 
@@ -97,7 +99,7 @@ public class DruidConfig {
         try {
             datasource.setFilters(filters);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("配置数据源异常：", e);
         }
         datasource.setConnectionProperties(connectionProperties);
 

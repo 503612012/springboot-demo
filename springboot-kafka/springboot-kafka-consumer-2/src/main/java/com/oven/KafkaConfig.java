@@ -6,8 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * kafka配置
- *
- * @author Oven
  */
 @Configuration
 public class KafkaConfig implements InitializingBean {

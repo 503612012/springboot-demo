@@ -1,5 +1,6 @@
 package com.oven;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -10,9 +11,8 @@ import javax.annotation.Resource;
 
 /**
  * 生产者
- *
- * @author Oven
  */
+@Slf4j
 @Component
 @EnableScheduling
 public class KafkaProducer {
@@ -26,11 +26,11 @@ public class KafkaProducer {
      * 定时任务
      */
     @SuppressWarnings("unchecked")
-    @Scheduled(cron = "00/1 * * * * ?")
+    @Scheduled(cron = "0/1 * * * * ?")
     public void send() {
         no++;
         ListenableFuture future = kafkaTemplate.send("oven.test.topic", String.valueOf(no));
-        future.addCallback(o -> System.out.println("send-消息发送成功：" + no), throwable -> System.out.println("消息发送失败：" + no));
+        future.addCallback(o -> log.info("send-消息发送成功：{}", no), throwable -> log.info("消息发送失败：{}", no));
     }
 
 }

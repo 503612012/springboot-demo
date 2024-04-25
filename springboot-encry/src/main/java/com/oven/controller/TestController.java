@@ -1,9 +1,11 @@
 package com.oven.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 public class TestController {
 
@@ -23,7 +25,7 @@ public class TestController {
      */
     @RequestMapping(value = "/send")
     public Object send(String name, String sex, Integer age) {
-        System.out.println("controller接收的参数name={" + name + "}、sex={" + sex + "}、age={" + age + "}");
+        log.info("controller接收的参数name={}、sex={}、age={}", name, sex, age);
         return new JSONObject();
     }
 }

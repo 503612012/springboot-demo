@@ -14,11 +14,11 @@ public class JasyptTest {
     @Autowired
     StringEncryptor encryptor;
 
-    //加密
+    // 加密
     @Test
     public void getPass() {
         String name = encryptor.encrypt("5217");
-        System.out.println("加密结果：" + name);//解密
+        System.out.println("加密结果：" + name);// 解密
     }
 
     @Test
