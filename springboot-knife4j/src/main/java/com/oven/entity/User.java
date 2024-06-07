@@ -1,4 +1,4 @@
-package com.oven.vo;
+package com.oven.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

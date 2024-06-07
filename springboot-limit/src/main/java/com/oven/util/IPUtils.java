@@ -1,5 +1,7 @@
 package com.oven.util;
 
+import lombok.extern.slf4j.Slf4j;
+
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -8,6 +10,7 @@ import java.util.regex.Pattern;
 /**
  * IP工具类
  */
+@Slf4j
 public class IPUtils {
 
     public static String getClientIPAddr(HttpServletRequest request) {
@@ -15,14 +18,14 @@ public class IPUtils {
         // 1.首先考虑有反向代理的情况，如果有代理，通过“x-forwarded-for”获取真实ip地址
         ip = request.getHeader("x-forwarded-for");
         // 2.如果squid.conf的配制文件forwarded_for项默认是off，则：X-Forwarded-For：unknown。考虑用Proxy-Client-IP或WL-Proxy-Client-IP获取
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getHeader("Proxy-Client-IP");
         }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getHeader("WL-Proxy-Client-IP");
         }
         // 3.最后考虑没有代理的情况，直接用request.getRemoteAddr()获取ip
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+        if (ip == null || ip.isEmpty() || "unknown".equalsIgnoreCase(ip)) {
             ip = request.getRemoteAddr();
             // 使用localhost访问
             if ("0:0:0:0:0:0:0:1".equals(ip)) {
@@ -38,7 +41,7 @@ public class IPUtils {
             try {
                 ip = InetAddress.getLocalHost().getHostAddress();
             } catch (UnknownHostException e) {
-                e.printStackTrace();
+                log.error("系统异常：", e);
             }
         }
         // 6.校验ip的合法性，不合法返回""
@@ -57,13 +60,13 @@ public class IPUtils {
     private static boolean isValidIp(String ipAddress) {
         boolean retVal = false;
         try {
-            if (ipAddress != null && !"".equals(ipAddress)) {
+            if (ipAddress != null && !ipAddress.isEmpty()) {
                 String regex = "([1-9]|[1-9]\\d|1\\d{2}|2[0-4]\\d|25[0-5])(\\.(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d|25[0-5])){3}";
                 Pattern pattern = Pattern.compile(regex);
                 retVal = pattern.matcher(ipAddress).matches();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return retVal;
     }

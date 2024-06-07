@@ -1,6 +1,6 @@
 package com.oven.controller;
 
-import com.oven.vo.User;
+import com.oven.entity.User;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

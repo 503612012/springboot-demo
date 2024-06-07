@@ -68,7 +68,7 @@ public class LimitInterceptor {
                 throw new RuntimeException(errMsg);
             }
         } catch (Throwable e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             throw new LimitException(7001, errMsg);
         }
     }
