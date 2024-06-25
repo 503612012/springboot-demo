@@ -19,7 +19,6 @@
     }
 
     sse.onmessage = (event) => {
-        debugger
         console.log(event.data);
         document.getElementById("message1").innerHTML = event.data;
     }
@@ -32,7 +31,6 @@
      * 自定义消息触发
      */
     sse.addEventListener("camera", function (e) {
-        debugger
         console.log(e)
         document.getElementById("message2").innerHTML = event.data;
     });

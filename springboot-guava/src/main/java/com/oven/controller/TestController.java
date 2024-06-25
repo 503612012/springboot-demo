@@ -1,38 +1,40 @@
 package com.oven.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 public class TestController {
 
     @RequestMapping("/test")
     @Cacheable(value = "test")
     public Object test() {
-        System.out.println("进入方法内部");
+        log.info("进入方法内部");
         return "hello guava";
     }
 
     @RequestMapping("/save")
     @CachePut(value = "name", key = "#name")
     public Object save(String name) {
-        System.out.println("添加key为[" + name + "]的缓存");
+        log.info("添加key为[{}]的缓存", name);
         return name;
     }
 
     @RequestMapping("/delete")
     @CacheEvict(value = "name", key = "#name")
     public void delete(String name) {
-        System.out.println("删除key为[" + name + "]的缓存");
+        log.info("删除key为[{}]的缓存", name);
     }
 
     @RequestMapping("/getByName")
     @Cacheable(value = "name", key = "#name")
     public Object getByName(String name) {
-        System.out.println("添加key为[" + name + "]的缓存");
+        log.info("添加key为[{}]的缓存", name);
         return name;
     }
 

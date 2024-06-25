@@ -12,6 +12,6 @@ public class ServiceIndividualizationImpl implements ISaveIndividualizationServi
 
     @Override
     public void afterSave() {
-        System.out.println("afterSaveing...");
+        System.out.println("afterSaving...");
     }
 }
