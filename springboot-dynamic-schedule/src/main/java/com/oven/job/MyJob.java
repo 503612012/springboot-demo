@@ -1,9 +1,11 @@
 package com.oven.job;
 
+import lombok.extern.slf4j.Slf4j;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
+@Slf4j
 public class MyJob extends QuartzJobBean {
 
     @Override
@@ -14,9 +16,9 @@ public class MyJob extends QuartzJobBean {
         String param2 = (String) dataMap.get("param2");
         String param3 = (String) dataMap.get("param3");
 
-        System.out.println(param1);
-        System.out.println(param2);
-        System.out.println(param3);
+        log.info(param1);
+        log.info(param2);
+        log.info(param3);
     }
 
 }

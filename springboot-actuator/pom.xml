@@ -27,13 +27,11 @@
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
-            <version>2.0.0</version>
         </dependency>
         <!-- 客户端包 -->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>2.0.0</version>
         </dependency>
         <!-- 安全认证 -->
         <dependency>
