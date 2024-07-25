@@ -1,13 +1,19 @@
 package com.oven.netty.util;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * 对象序列化工具
  */
+@Slf4j
 public class ObjectSerializerUtils {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ObjectSerializerUtils.class);
@@ -23,13 +29,12 @@ public class ObjectSerializerUtils {
                 return ois.readObject();
             } catch (Exception e) {
                 LOGGER.info("[异常信息] {}", e.getMessage());
-                e.printStackTrace();
+                log.error("系统异常：", e);
             }
-            return null;
         } else {
             LOGGER.info("[反序列化] 入参为空");
-            return null;
         }
+        return null;
     }
 
     /**
@@ -45,12 +50,10 @@ public class ObjectSerializerUtils {
                 oos.close();
                 return bos.toByteArray();
             } catch (IOException e) {
-                e.printStackTrace();
+                log.error("系统异常：", e);
             }
-            return null;
-        } else {
-            return null;
         }
+        return null;
     }
 
 }

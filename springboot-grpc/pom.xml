@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.oven</groupId>
+        <artifactId>springboot-demo</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>springboot-grpc</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>springboot-grpc-api</module>
+        <module>springboot-grpc-server</module>
+        <module>springboot-grpc-client</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <protobuf.version>3.23.4</protobuf.version>
+        <protobuf-plugin.version>0.6.1</protobuf-plugin.version>
+        <grpc.version>1.53.0</grpc.version>
+        <protobuf-java-util.version>3.21.7</protobuf-java-util.version>
+    </properties>
+
+</project>

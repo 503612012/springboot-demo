@@ -7,6 +7,7 @@ import com.espertech.esper.client.EPStatement;
 import com.oven.config.EsperConfig;
 import com.oven.listener.LacciListener1;
 import com.oven.listener.LacciListener2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @RestController
 public class EplController {
 
@@ -33,7 +35,7 @@ public class EplController {
         statement.addListener(new LacciListener1());
         statement.start();
         EsperConfig.STATEMENT_WRAP.put("1", statement);
-        System.out.println(" 111 启动成功！");
+        log.info(" 111 启动成功！");
         return " 111 启动成功！";
     }
 
@@ -48,7 +50,7 @@ public class EplController {
         statement.addListener(new LacciListener2());
         statement.start();
         EsperConfig.STATEMENT_WRAP.put("2", statement);
-        System.out.println(" 222 启动成功！");
+        log.info(" 222 启动成功！");
         return " 222 启动成功！";
     }
 
