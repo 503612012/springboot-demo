@@ -1,4 +1,4 @@
-package com.oven.vo;
+package com.oven.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
