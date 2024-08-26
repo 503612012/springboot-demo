@@ -1,4 +1,4 @@
-package com.oven.vo;
+package com.oven.entity;
 
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Document;
