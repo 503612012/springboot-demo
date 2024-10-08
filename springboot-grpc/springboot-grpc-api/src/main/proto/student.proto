@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.oven.grpc.entity;
+
+option java_multiple_files = true;
+
+message StudentRequest {
+  int32 pageNum = 1;
+  int32 pageSize = 2;
+  string searcher = 3;
+}
+
+message StudentResponse {
+  int32 code = 1;
+  string message = 2;
+  string data = 3;
+}

@@ -1,11 +1,13 @@
 package com.oven.controller;
 
 import com.oven.config.HBaseClient;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @RestController
 public class DemoController {
 
@@ -22,7 +24,7 @@ public class DemoController {
             hBaseClient.createTable(TABLE_NAME, TABLE_FAMILY_1, TABLE_FAMILY_2);
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -33,7 +35,7 @@ public class DemoController {
             hBaseClient.deleteTable(TABLE_NAME);
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -50,7 +52,7 @@ public class DemoController {
             hBaseClient.insertOrUpdate(TABLE_NAME, "2", TABLE_FAMILY_1, "name", "英短");
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -61,7 +63,7 @@ public class DemoController {
             hBaseClient.deleteRow(TABLE_NAME, id);
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -72,7 +74,7 @@ public class DemoController {
             hBaseClient.deleteColumnFamily(TABLE_NAME, id, TABLE_FAMILY_2);
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -83,7 +85,7 @@ public class DemoController {
             hBaseClient.deleteColumn(TABLE_NAME, id, TABLE_FAMILY_1, "age");
             return "success";
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -93,7 +95,7 @@ public class DemoController {
         try {
             return hBaseClient.getValue(TABLE_NAME, id, TABLE_FAMILY_1, "name");
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }
@@ -103,7 +105,7 @@ public class DemoController {
         try {
             return hBaseClient.selectOneRow(TABLE_NAME, id, TABLE_FAMILY_1);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "error";
         }
     }

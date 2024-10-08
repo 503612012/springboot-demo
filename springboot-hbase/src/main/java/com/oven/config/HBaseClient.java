@@ -1,10 +1,22 @@
 package com.oven.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.TableExistsException;
 import org.apache.hadoop.hbase.TableName;
-import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.client.Admin;
+import org.apache.hadoop.hbase.client.ColumnFamilyDescriptor;
+import org.apache.hadoop.hbase.client.ColumnFamilyDescriptorBuilder;
+import org.apache.hadoop.hbase.client.Connection;
+import org.apache.hadoop.hbase.client.ConnectionFactory;
+import org.apache.hadoop.hbase.client.Delete;
+import org.apache.hadoop.hbase.client.Get;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.Table;
+import org.apache.hadoop.hbase.client.TableDescriptor;
+import org.apache.hadoop.hbase.client.TableDescriptorBuilder;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
@@ -15,6 +27,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Component
 @DependsOn("hbaseConfig")
 public class HBaseClient {
@@ -34,7 +47,7 @@ public class HBaseClient {
             connection = ConnectionFactory.createConnection(config.configuration());
             admin = connection.getAdmin();
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
     }
 
@@ -112,13 +125,13 @@ public class HBaseClient {
             g.addColumn(family.getBytes(), column.getBytes());
             Result result = table.get(g);
             List<Cell> ceList = result.listCells();
-            if (ceList != null && ceList.size() > 0) {
+            if (ceList != null && !ceList.isEmpty()) {
                 for (Cell cell : ceList) {
                     value = Bytes.toString(cell.getValueArray(), cell.getValueOffset(), cell.getValueLength());
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
         }
         return value;
     }
