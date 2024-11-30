@@ -1,0 +1,9 @@
+server:
+  port: 8081
+grpc:
+  client:
+    studentGrpcServer:
+      address: 'static://localhost:9090'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext

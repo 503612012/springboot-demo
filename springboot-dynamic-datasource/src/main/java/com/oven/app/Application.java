@@ -5,8 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 启动类
- *
- * @author Oven
  */
 @SpringBootApplication(scanBasePackages = "com.oven")
 public class Application {

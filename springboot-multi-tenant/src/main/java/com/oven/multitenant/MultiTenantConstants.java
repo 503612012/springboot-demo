@@ -2,8 +2,6 @@ package com.oven.multitenant;
 
 /**
  * 多租户常量
- *
- * @author Oven
  */
 public interface MultiTenantConstants {
 

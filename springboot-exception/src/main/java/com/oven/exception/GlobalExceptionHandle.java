@@ -1,11 +1,13 @@
 package com.oven.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
+@Slf4j
 @ResponseBody
 @ControllerAdvice
 public class GlobalExceptionHandle {
@@ -15,9 +17,9 @@ public class GlobalExceptionHandle {
      */
     @ExceptionHandler(value = Exception.class)
     public Object handleException(HttpServletRequest request) {
-        System.out.println("请求地址：" + request.getRequestURL().toString());
-        System.out.println("请求方法：" + request.getMethod());
-        System.out.println("请求者IP：" + request.getRemoteAddr());
+        log.info("请求地址：{}", request.getRequestURL().toString());
+        log.info("请求方法：{}", request.getMethod());
+        log.info("请求者IP：{}", request.getRemoteAddr());
         return "异常了";
     }
 

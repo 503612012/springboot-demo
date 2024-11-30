@@ -6,8 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 启动类
- *
- * @author Oven
  */
 @MapperScan(basePackages = "com.oven.mapper")
 @SpringBootApplication(scanBasePackages = "com.oven")

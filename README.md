@@ -30,11 +30,11 @@
 
 ## 四、配置修改
 
-##### 1) 修改配置文件
+#### 1) 修改配置文件
 
 > 修改`application-pro.properties`文件中的数据源配置
 
-##### 2) 修改配置文件
+#### 2) 修改配置文件
 
 > 修改`demo.sql`文件中的redis配置
 
@@ -58,7 +58,7 @@
 
 ## 八、开发环境搭建
 
-> #### 1. 修改 [src/main/resources/application-dev.properties](./src/main/resources/application-dev.properties) 中数据源信息
-> #### 2. 修改 [src/main/resources/logback-dev.xml](./src/main/resources/logback-dev.xml) 中日志保存路径信息
-> #### 3. 修改 [src/main/java/com/oven/demo/framework/config/DevEnvSet.java](./src/main/java/com/oven/demo/framework/config/DevEnvSet.java) 中相关配置项
-> #### 4. 修改 [pom.xml](./pom.xml) 中指定profile
+> 1. 修改 [src/main/resources/application-dev.properties](./src/main/resources/application-dev.properties) 中数据源信息
+> 2. 修改 [src/main/resources/logback-dev.xml](./src/main/resources/logback-dev.xml) 中日志保存路径信息
+> 3. 修改 [src/main/java/com/oven/demo/framework/config/DevEnvSet.java](./src/main/java/com/oven/demo/framework/config/DevEnvSet.java) 中相关配置项
+> 4. 修改 [pom.xml](./pom.xml) 中指定profile

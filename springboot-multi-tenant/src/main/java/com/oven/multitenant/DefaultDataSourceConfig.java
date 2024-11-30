@@ -10,8 +10,6 @@ import javax.sql.DataSource;
 
 /**
  * 默认数据源配置
- *
- * @author Oven
  */
 @Configuration
 public class DefaultDataSourceConfig {

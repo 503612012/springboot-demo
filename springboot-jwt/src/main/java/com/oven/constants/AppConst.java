@@ -2,8 +2,6 @@ package com.oven.constants;
 
 /**
  * 系统常量定义类
- *
- * @author Oven
  */
 public class AppConst {
 

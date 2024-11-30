@@ -13,8 +13,6 @@ import javax.sql.DataSource;
 
 /**
  * MySQL数据源配置
- *
- * @author Oven
  */
 @Configuration
 @MapperScan(basePackages = "com.oven.mapper.mysql", sqlSessionFactoryRef = "mysqlSqlSessionFactory")

@@ -11,8 +11,6 @@ import org.springframework.security.oauth2.provider.error.WebResponseExceptionTr
 
 /**
  * web全局异常返回处理器
- *
- * @author Oven
  */
 @Configuration
 public class WebResponseExceptionTranslateConfig {

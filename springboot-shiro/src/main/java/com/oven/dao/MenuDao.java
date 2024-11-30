@@ -1,6 +1,6 @@
 package com.oven.dao;
 
-import com.oven.vo.Menu;
+import com.oven.entity.Menu;
 import org.springframework.data.repository.CrudRepository;
 
 public interface MenuDao extends CrudRepository<Menu, Long> {

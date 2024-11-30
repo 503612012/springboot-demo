@@ -1,8 +1,0 @@
-server:
-  port: 5217
-  servlet:
-    context-path: /oven
-spring:
-  data:
-    mongodb:
-      uri: mongodb://xxx:xxx@xxx.xxx.xxx.xxx:27017/xxx_xxxxxx

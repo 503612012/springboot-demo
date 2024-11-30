@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 /**
  * 数据源配置实体类
- *
- * @author Oven
  */
 public class DataSourceConfig implements Serializable {
 

@@ -1,6 +1,5 @@
 package com.oven.interceptor;
 
-
 import com.alibaba.fastjson.JSON;
 import com.oven.constants.AppConst;
 import com.oven.utils.JwtUtils;
@@ -15,8 +14,6 @@ import java.io.IOException;
 
 /**
  * jwtToken校验拦截器
- *
- * @author Oven
  */
 public class JwtInterceptor extends HandlerInterceptorAdapter {
 

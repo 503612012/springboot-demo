@@ -14,8 +14,6 @@ import javax.sql.DataSource;
 
 /**
  * Oracle数据源配置
- *
- * @author Oven
  */
 @Configuration
 @MapperScan(basePackages = "com.oven.mapper.oracle", sqlSessionFactoryRef = "oracleSqlSessionFactory")

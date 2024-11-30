@@ -1,0 +1,5 @@
+spring:
+  influx:
+    url: http://10.19.32.170:2086
+    user: admin
+    password:

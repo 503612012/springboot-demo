@@ -1,13 +1,11 @@
 package com.oven.handler;
 
 import com.lmax.disruptor.EventHandler;
-import com.oven.vo.Message;
+import com.oven.entity.Message;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 任务消息处理器
- *
- * @author Oven
  */
 @Slf4j
 public class TaskEventHandler implements EventHandler<Message> {

@@ -7,8 +7,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 /**
  * 资源服务器配置
- *
- * @author Oven
  */
 @Configuration
 @EnableResourceServer

@@ -14,8 +14,6 @@ import static com.oven.multitenant.MultiTenantConstants.DEFAULT_TENANT_ID;
 
 /**
  * 提供动态数据源
- *
- * @author Oven
  */
 @Component
 public class DataSourceBasedMultiTenantConnectionProviderImpl extends AbstractDataSourceBasedMultiTenantConnectionProviderImpl {
@@ -49,14 +47,14 @@ public class DataSourceBasedMultiTenantConnectionProviderImpl extends AbstractDa
         }
         return map.get(tenantIdentifier);
 
-//        // 懒加载模式
-//        DataSource dataSource = map.get(tenantIdentifier);
-//        if (dataSource == null) {
-//            TenantDataSource tenantDataSource = context.getBean(TenantDataSource.class);
-//            dataSource = tenantDataSource.getDataSource(tenantIdentifier);
-//            map.put(tenantIdentifier, dataSource);
-//        }
-//        return dataSource;
+        // // 懒加载模式
+        // DataSource dataSource = map.get(tenantIdentifier);
+        // if (dataSource == null) {
+        //     TenantDataSource tenantDataSource = context.getBean(TenantDataSource.class);
+        //     dataSource = tenantDataSource.getDataSource(tenantIdentifier);
+        //     map.put(tenantIdentifier, dataSource);
+        // }
+        // return dataSource;
     }
 
 }

@@ -9,8 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * 拦截器配置
- *
- * @author Oven
  */
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {

@@ -1,12 +1,14 @@
 package com.oven.controller;
 
 import com.oven.quartz.config.QuartzSchedulerConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.quartz.SchedulerException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+@Slf4j
 @RestController
 @RequestMapping("/quartz")
 public class DemoController {
@@ -20,7 +22,7 @@ public class DemoController {
             quartzSchedulerConfig.startAllJob();
             return "启动成功";
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "启动失败";
         }
     }
@@ -31,7 +33,7 @@ public class DemoController {
         try {
             info = quartzSchedulerConfig.getJobInfo(name, group);
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return null;
         }
         return info;
@@ -43,7 +45,7 @@ public class DemoController {
         try {
             flag = quartzSchedulerConfig.modifyJob(name, group, time);
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "修改失败";
         }
         if (flag) {
@@ -58,7 +60,7 @@ public class DemoController {
             quartzSchedulerConfig.pauseJob(name, group);
             return "暂停成功";
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "暂停失败";
         }
     }
@@ -69,7 +71,7 @@ public class DemoController {
             quartzSchedulerConfig.pauseAllJob();
             return "暂停全部成功";
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "暂停全部失败";
         }
     }
@@ -81,7 +83,7 @@ public class DemoController {
             quartzSchedulerConfig.resumeJob(name, group);
             return "重启成功";
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "重启失败";
         }
     }
@@ -92,7 +94,7 @@ public class DemoController {
             quartzSchedulerConfig.resumeAllJob();
             return "重启全部成功";
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "重启全部失败";
         }
     }
@@ -103,7 +105,7 @@ public class DemoController {
             quartzSchedulerConfig.deleteJob(name, group);
             return "删除成功";
         } catch (SchedulerException e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return "删除失败";
         }
     }

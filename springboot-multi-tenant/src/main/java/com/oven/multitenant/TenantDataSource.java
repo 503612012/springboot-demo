@@ -12,13 +12,11 @@ import java.util.Map;
 
 /**
  * 根据租户生成数据源
- *
- * @author Oven
  */
 @Component
 public class TenantDataSource implements Serializable {
 
-    private HashMap<String, DataSource> dataSources = new HashMap<>();
+    private final HashMap<String, DataSource> dataSources = new HashMap<>();
 
     @Resource
     private DataSourceConfigDao dataSourceConfigDao;
@@ -56,18 +54,18 @@ public class TenantDataSource implements Serializable {
      * @param name 租户名称
      */
     private DataSource createDataSource(String name) {
-//        DataSourceConfig config = dataSourceConfigDao.findByName(name);
-//        if (config != null) {
-//            DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//            dataSource.setDriverClassName(config.getDriverClassName());
-//            dataSource.setUsername(config.getUsername());
-//            dataSource.setPassword(config.getPassword());
-//            dataSource.setUrl(config.getUrl());
-//            return dataSource;
-//        }
-//        return null;
+        // DataSourceConfig config = dataSourceConfigDao.findByName(name);
+        // if (config != null) {
+        //     DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        //     dataSource.setDriverClassName(config.getDriverClassName());
+        //     dataSource.setUsername(config.getUsername());
+        //     dataSource.setPassword(config.getPassword());
+        //     dataSource.setUrl(config.getUrl());
+        //     return dataSource;
+        // }
+        // return null;
 
-        // 改成driud后，租户数据源配置表中应该增加相应的配置信息 TODO
+        // 改成druid后，租户数据源配置表中应该增加相应的配置信息 TODO
         DataSourceConfig config = dataSourceConfigDao.findByName(name);
         if (config != null) {
             DruidDataSource dataSource = new DruidDataSource();

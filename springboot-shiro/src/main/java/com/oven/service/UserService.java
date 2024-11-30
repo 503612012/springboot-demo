@@ -1,6 +1,6 @@
 package com.oven.service;
 
-import com.oven.vo.User;
+import com.oven.entity.User;
 
 public interface UserService {
 

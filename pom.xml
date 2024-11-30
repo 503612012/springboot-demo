@@ -31,7 +31,6 @@
         <module>springboot-dynamic-datasource</module>
         <module>springboot-elasticsearch</module>
         <module>springboot-kafka</module>
-        <module>springboot-mongo</module>
         <module>springboot-rabbitmq</module>
         <module>springboot-esper</module>
         <module>springboot-commandRunner</module>
@@ -81,6 +80,50 @@
         <module>springboot-mybatis-xml</module>
         <module>springboot-mybatis-annotation</module>
         <module>springboot-multiDatasource-mybatis</module>
+        <module>springboot-elasticjob</module>
+        <module>springboot-elk</module>
+        <module>springboot-fastdfs</module>
+        <module>springboot-fileUpload</module>
+        <module>springboot-filter</module>
+        <module>springboot-freemarker</module>
+        <module>springboot-graylog</module>
+        <module>springboot-hbase</module>
+        <module>springboot-hibernate</module>
+        <module>springboot-i18n</module>
+        <module>springboot-interceptor</module>
+        <module>springboot-jdbcTemplate</module>
+        <module>springboot-jsp</module>
+        <module>springboot-limit</module>
+        <module>springboot-listener</module>
+        <module>springboot-logback</module>
+        <module>springboot-lucene</module>
+        <module>springboot-memcached</module>
+        <module>springboot-minio</module>
+        <module>springboot-mongodb</module>
+        <module>springboot-mqtt</module>
+        <module>springboot-multiDatasource-jdbc</module>
+        <module>springboot-multiDatasource-jpa</module>
+        <module>springboot-sse</module>
+        <module>springboot-disruptor</module>
+        <module>springboot-lifecycle</module>
+        <module>springboot-derby</module>
+        <module>springboot-sqlite</module>
+        <module>springboot-influxdb</module>
+        <module>springboot-alipay</module>
+        <module>springboot-jayway-jsonpath</module>
+        <module>springboot-mybatis-plus</module>
+        <module>springboot-webclient</module>
+        <module>springboot-okhttp</module>
+        <module>springboot-completableFuture</module>
+        <module>springboot-executor</module>
+        <module>springboot-xstream</module>
+        <module>springboot-rmi</module>
+        <module>springboot-zipkin</module>
+        <module>springboot-tika</module>
+        <module>springboot-picocli</module>
+        <module>springboot-grpc</module>
+        <module>springboot-neo4j</module>
+        <module>springboot-rateLimiter</module>
         <module>demo</module>
     </modules>
 

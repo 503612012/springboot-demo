@@ -13,8 +13,6 @@ import static com.oven.multitenant.MultiTenantConstants.TENANT_KEY;
 
 /**
  * baseDao
- *
- * @author Oven
  */
 public class BaseDao {
 
@@ -23,8 +21,6 @@ public class BaseDao {
 
     /**
      * 动态获取JdbcTemplate，根据租户信息
-     *
-     * @author Oven
      */
     protected JdbcTemplate getJdbcTemplate() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();

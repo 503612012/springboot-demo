@@ -1,6 +1,6 @@
 package com.oven.dao;
 
-import com.oven.vo.UserPermission;
+import com.oven.entity.UserPermission;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

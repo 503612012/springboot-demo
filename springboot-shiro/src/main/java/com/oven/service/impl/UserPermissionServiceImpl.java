@@ -1,10 +1,10 @@
 package com.oven.sevice.impl;
 
 import com.oven.dao.UserPermissionDao;
+import com.oven.entity.Menu;
+import com.oven.entity.UserPermission;
 import com.oven.service.MenuService;
 import com.oven.service.UserPermissionService;
-import com.oven.vo.Menu;
-import com.oven.vo.UserPermission;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

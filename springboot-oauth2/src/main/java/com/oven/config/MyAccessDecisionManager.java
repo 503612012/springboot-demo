@@ -13,8 +13,6 @@
 //
 ///**
 // * 决策器
-// *
-// * @author Oven
 // */
 //@Component
 //public class MyAccessDecisionManager implements AccessDecisionManager {

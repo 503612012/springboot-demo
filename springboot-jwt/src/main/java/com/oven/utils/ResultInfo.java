@@ -2,8 +2,6 @@ package com.oven.utils;
 
 /**
  * 自定义返回类
- *
- * @author Oven
  */
 public class ResultInfo<T> {
 

@@ -1,8 +1,8 @@
 package com.oven.sevice.impl;
 
 import com.oven.dao.MenuDao;
+import com.oven.entity.Menu;
 import com.oven.service.MenuService;
-import com.oven.vo.Menu;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

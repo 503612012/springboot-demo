@@ -1,8 +1,8 @@
 package com.oven.config;
 
+import com.oven.entity.User;
 import com.oven.service.UserPermissionService;
 import com.oven.service.UserService;
-import com.oven.vo.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

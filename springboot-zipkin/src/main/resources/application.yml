@@ -1,0 +1,7 @@
+spring:
+  zipkin:
+    base-url: http://192.168.63.130:9411
+    enabled: true
+  sleuth:
+    sampler:
+      probability: 1

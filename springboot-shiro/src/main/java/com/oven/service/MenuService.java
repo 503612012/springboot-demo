@@ -1,6 +1,6 @@
 package com.oven.service;
 
-import com.oven.vo.Menu;
+import com.oven.entity.Menu;
 
 public interface MenuService {
 

@@ -8,8 +8,6 @@ import javax.annotation.Resource;
 
 /**
  * 测试控制器
- *
- * @author Oven
  */
 @RestController
 public class TestController {

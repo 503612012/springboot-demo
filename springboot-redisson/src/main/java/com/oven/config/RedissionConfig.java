@@ -1,5 +1,6 @@
 package com.oven.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -8,6 +9,7 @@ import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+@Slf4j
 @Configuration
 public class RedissionConfig {
 
@@ -26,7 +28,7 @@ public class RedissionConfig {
             redissonClient = Redisson.create(config);
             return redissonClient;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return null;
         }
     }

@@ -4,9 +4,9 @@ import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
+import com.oven.entity.Message;
+import com.oven.entity.MessageEventFactory;
 import com.oven.handler.TaskEventHandler;
-import com.oven.vo.Message;
-import com.oven.vo.MessageEventFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

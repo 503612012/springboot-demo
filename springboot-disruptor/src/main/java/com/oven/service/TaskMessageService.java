@@ -1,7 +1,7 @@
 package com.oven.service;
 
 import com.lmax.disruptor.RingBuffer;
-import com.oven.vo.Message;
+import com.oven.entity.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

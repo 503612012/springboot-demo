@@ -6,8 +6,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
  * 启动类
- *
- * @author Oven
  */
 @EnableJpaRepositories(basePackages = "com.oven.dao")
 @SpringBootApplication(scanBasePackages = "com.oven")

@@ -1,14 +1,12 @@
 package com.oven.dao;
 
-import com.oven.vo.Book;
+import com.oven.entity.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * 书籍dao层
- *
- * @author Oven
  */
 @Repository
 public class BookDao extends BaseDao {

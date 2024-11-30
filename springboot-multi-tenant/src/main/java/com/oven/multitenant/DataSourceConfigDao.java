@@ -8,8 +8,6 @@ import java.util.List;
 
 /**
  * 数据源配置dao层
- *
- * @author Oven
  */
 @Repository
 public class DataSourceConfigDao {
@@ -26,7 +24,7 @@ public class DataSourceConfigDao {
             dataSourceConfig.setPassword(rs.getString("_password"));
             dataSourceConfig.setUsername(rs.getString("username"));
             dataSourceConfig.setUrl(rs.getString("url"));
-            dataSourceConfig.setDriverClassName(rs.getString("driverclassname"));
+            dataSourceConfig.setDriverClassName(rs.getString("driver_class_name"));
             return dataSourceConfig;
         });
     }
@@ -40,10 +38,10 @@ public class DataSourceConfigDao {
             dataSourceConfig.setName(rs.getString("_name"));
             dataSourceConfig.setUsername(rs.getString("username"));
             dataSourceConfig.setUrl(rs.getString("url"));
-            dataSourceConfig.setDriverClassName(rs.getString("driverclassname"));
+            dataSourceConfig.setDriverClassName(rs.getString("driver_class_name"));
             return dataSourceConfig;
         }, name);
-        return list.size() == 0 ? null : list.get(0);
+        return list.isEmpty() ? null : list.get(0);
     }
 
 }

@@ -12,8 +12,6 @@ import java.util.Objects;
 
 /**
  * JwtUtils
- *
- * @author Oven
  */
 @Slf4j
 public final class JwtUtils {
@@ -61,7 +59,7 @@ public final class JwtUtils {
                     .parseClaimsJws(token)
                     .getBody();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("系统异常：", e);
             return null;
         }
     }
