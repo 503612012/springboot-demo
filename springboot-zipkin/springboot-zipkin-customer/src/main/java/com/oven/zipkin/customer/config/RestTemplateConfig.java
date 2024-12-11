@@ -1,4 +1,4 @@
-package com.oven.zipkin.config;
+package com.oven.zipkin.customer.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

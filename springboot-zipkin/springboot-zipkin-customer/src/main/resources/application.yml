@@ -1,0 +1,9 @@
+spring:
+  zipkin:
+    base-url: http://10.211.55.4:9411
+    enabled: true
+  sleuth:
+    sampler:
+      probability: 1
+server:
+  port: 8081

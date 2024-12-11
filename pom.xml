@@ -124,7 +124,6 @@
         <module>springboot-grpc</module>
         <module>springboot-neo4j</module>
         <module>springboot-rateLimiter</module>
-        <module>demo</module>
     </modules>
 
     <build>
